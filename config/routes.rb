@@ -1,3 +1,19 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+    get '/movies', to: 'movies#index'
+    get '/sheets', to: 'sheets#index'
+
+    namespace :admin do
+        resources :movies, only: [:index, :new, :create, :show, :edit, :update]
+    end
+
+    namespace :admin do
+        resources :movies do
+          member do
+            delete :destroy
+          end
+        end
+      end
+
+      
 end
+  

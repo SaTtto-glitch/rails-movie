@@ -1,0 +1,23 @@
+<h1>座席表</h1>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>スクリーン</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sheets.each do |sheet| %>
+      <tr>
+        <td><%= sheet.row %></td>
+        <td>-</td>
+        <td><%= sheet.column %></td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
